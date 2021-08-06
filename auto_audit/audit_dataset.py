@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import random
 import math
 import pickle
+import skimage
 
 class audit_dataset:
     # Initiate
