@@ -10,7 +10,7 @@ import random
 import math
 import pickle
 
-class dataset:
+class audit_dataset:
     # Initiate
     def __init__(self):
         self.image_ids = [] # a sequential id given just for this class
