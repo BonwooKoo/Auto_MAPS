@@ -348,7 +348,7 @@ class audit_dataset:
 
         # When SegID is provided
         elif SegID is not None and image_id is None:
-            ids_for_SegID = [x for x in gsv_data.image_ids if SegID in x]
+            ids_for_SegID = [x for x in self.image_ids if SegID in x]
 
             for image_id in ids_for_SegID:
                 prediction_for_id = self.image_info[image_id[0]]['image_info'][image_id[1]][image_id[2]][image_id[3]]['prediction']
