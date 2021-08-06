@@ -11,6 +11,9 @@ import math
 import pickle
 import skimage
 
+sys.path.append("/content/Mask_RCNN")
+from mrcnn import visualize
+
 class audit_dataset:
     # Initiate
     def __init__(self):
