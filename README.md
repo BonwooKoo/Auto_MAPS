@@ -50,16 +50,19 @@ point_gsv$audit_point %>%
 * sf - version version 0.9-5
 * tigris - version 1.0
 
+<br>
 ## Step 2: Downloading Street View Images (Python)
 
-> ***NOTE: If you do not have required packages (e.g., Tensorflow) installed, using Google Colab or other similar services is recommended. [See the Google Colab notebook for an example](https://colab.research.google.com/drive/1_yiTDSLqwJfdvHRXvVWHrsv-_LLRlXFh?usp=sharing).***
+> ***NOTE: If you do not have required packages (e.g., Tensorflow) installed, using Google Colab or other similar services is recommended. See [this](https://colab.research.google.com/drive/1_yiTDSLqwJfdvHRXvVWHrsv-_LLRlXFh?usp=sharing) Google Colab notebook for an example.***
 
-Step 2 uses **auto_audit.py** in Step2 folder and is based on Python language. After Step 1, you will have saved a CSV file. This CSV file is used as an input to Step 2 and 3. If you are using Google Colab or other similar services, upload the CSV file to your storage.
+Step 2 and 3 uses **auto_audit.py** in Step2_3 folder and is based on Python language. After Step 1, you will have saved a CSV file. This CSV file is used as an input to Step 2 and 3. If you are using Google Colab or other similar services, upload the CSV file to your storage. 
+
+After creating an instance of auto_audit_df class, use .add_image_info method() to add image information and .download_gsv() method to download GSV images. You will need to provide your API key again, and getting the images are NOT FREE OF CHARGE.
 
 See below for an example code:
 ```
-AUDIT_POINT_PATH = "path-to-your-output-from-Step1"
-DOWNLOAD_PATH = "path-to-your-image-folder"
+AUDIT_POINT_PATH = "path-to-your-CSVfile-from-Step1"
+DOWNLOAD_PATH = "path-to-folder-to-which-you-will-download-images"
 
 audit_point = pd.read_csv(AUDIT_POINT_PATH)
 auto_audit = auto_audit_df()
@@ -67,5 +70,13 @@ auto_audit.add_image_info(audit_point)
 test_df.download_gsv(download_path = DOWNLOAD_PATH, key = "your-google-api-key")
 ```
 
+<br>
 ## Step 3: Applying Computer Vision and Calculate Statistics (Python)
-Step 3 uses the script in **auto_audit** folder and is based on Python language. 
+Once you have downloaded the images, use .predict() method to apply the computer vision technique to the downloaded images. Next, use .prediction_summary() method to summarise the prediction results for each street segment. 
+
+See below for an example code:
+```
+test_df.predict(DOWNLOAD_PATH, model_dense, model_intersection, model_top) # I need to change this part so that model_dense etc. are part of the class object.
+output = test_df.prediction_summary()
+output.to_csv(DOWNLOAD_PATH + "/output.csv")
+```
