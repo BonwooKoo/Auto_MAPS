@@ -7,26 +7,25 @@ Auto-MAPS provides a scalable and reliable method for AUTOMATICALLY conducting a
 <br>
 Microscale characteristics of streetscapes
 The original MAPS-mini has 15 items, and Auto-MAPS on this repo measures 10 of them as the remaining five is measured using the conventional geographic information systems and Pyramid Scene Parsing Network (PSPNET). The 10 items include the following question:
-
+| ------- | ------------------------------------ | --------- |
 | Section | Question                             | Method    |
 | ------- | ------------------------------------ | --------- |
 | Crossing| Is a pedestrian walk signal present? | Auto-MAPS |
 |         | Is there a ramp at the curb(s)?      | Auto-MAPS |
-|     ^   | Is there a marked crosswalk?         | Auto-MAPS |
+|         | Is there a marked crosswalk?         | Auto-MAPS |
 | Segment | Type of land use?                    | GIS       |
-|     ^   | How many public parks are present? | GIS |
-|     ^   | How many public transit stops are present? | GIS |
-|     ^   | Is there a designated bike path | GIS |
-|     ^   | Are there any benches or places to sit? | Auto-MAPS |
-|     ^   | Are streetlights installed? | Auto-MAPS |
-|     ^   | Are the buildings well maintained? | Auto-MAPS |
-|     ^   | Is graffiti/tagging present? | Auto-MAPS |
-|     ^   | Is a sidewalk present? | Auto-MAPS |
-|     ^   | Are there poorly maintained sections of the sidewalk that constitute major trip hazards? | Auto-MAPS |
-|     ^   | Is a buffer present? | Auto-MAPS |
-|     ^   | What percentage of the length of the sidewalk/walkway is covered by trees, awnings, or other overhead coverage? | PSPNet |
+|         | How many public parks are present?   | GIS       |
+|         | How many public transit stops are present? | GIS |
+|         | Is there a designated bike path      | GIS       |
+|         | Are there any benches or places to sit? | Auto-MAPS |
+|         | Are streetlights installed?          | Auto-MAPS |
+|         | Are the buildings well maintained?   | Auto-MAPS |
+|         | Is graffiti/tagging present?         | Auto-MAPS |
+|         | Is a sidewalk present?               | Auto-MAPS |
+|         | Are there poorly maintained sections of the sidewalk that constitute major trip hazards? | Auto-MAPS |
+|         | Is a buffer present?                 | Auto-MAPS |
+|         | What percentage of the length of the sidewalk/walkway is covered by trees, awnings, or other overhead coverage? | PSPNet |
 | ------- | ------------------------------------ | --------- |
-
 
 The output will be the presence or the count of the items for each street segment.
 
