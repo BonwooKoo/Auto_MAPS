@@ -58,40 +58,10 @@ point_gsv$audit_point %>%
 
 ## Step 2: Downloading Street View Images & Applying Computer Vision (Python)
 
-After Step 1, you will have saved a CSV file. This CSV file is used as an input to Step 2 and 3. Once you've cloned this repo, 
+> ***NOTE: Step 2 and 3 assumes that you are using Google Colab for demonstration purposes.***
 
-The remainder of the process assumes that you are using Google Colab. [demo.ipynb](https://colab.research.google.com/drive/1_yiTDSLqwJfdvHRXvVWHrsv-_LLRlXFh?usp=sharing) includes code to download GSV images, apply computer vision technique, and conducting automated audit using the output from the computer vision technique.
+After Step 1, you will have saved a CSV file. You will need to upload the CSV file to Google Drive so that Google Colab can access the file. After the CSV is uploaded, you can finish the remainder of the process by following steps in [Auto_MAPS_demo.ipynb](https://colab.research.google.com/drive/1_yiTDSLqwJfdvHRXvVWHrsv-_LLRlXFh?usp=sharing).
 
-See below for an example code:
-```
-# Python 3.6.10.
-AUDIT_POINT_PATH = "path-to-your-CSVfile-from-Step1"
-DOWNLOAD_PATH = "path-to-folder-to-which-you-will-download-images"
-
-audit_point = pd.read_csv(AUDIT_POINT_PATH)
-auto_audit = auto_audit_df()
-auto_audit.add_image_info(audit_point)
-test_df.download_gsv(download_path = DOWNLOAD_PATH, key = "your-google-api-key")
-```
-
-<br />
-
-## Step 3: Applying Computer Vision and Calculate Statistics (Python)
-
-> ***NOTE: Step 2 and 3 assumes that you are using Google Colab.***
-
-Once you have downloaded the images, use .predict() method to apply the computer vision technique to the downloaded images. Next, use .prediction_summary() method to summarise the prediction results for each street segment. 
-
-See below for an example code:
-```
-# Python 3.6.10.
-test_df.predict(DOWNLOAD_PATH, model_dense, model_intersection, model_top) # I need to change this part so that model_dense etc. are part of the class object.
-output = test_df.prediction_summary()
-output.to_csv(DOWNLOAD_PATH + "/output.csv")
-
-# Additionally
-test_df.show_prediction(DOWNLOAD_PATH, SegID = your-SegID)
-```
 **Dependency**
 * Packages needed in [Mask R-CNN](https://github.com/matterport/Mask_RCNN)
 * pandas
@@ -102,3 +72,5 @@ test_df.show_prediction(DOWNLOAD_PATH, SegID = your-SegID)
 * h5py
 * scipy
 * scikit-image
+
+For questions, please contact Bon Woo Koo at bkoo34@gatech.edu.
