@@ -133,7 +133,7 @@ class auto_audit_df:
         # Downloads gsv images
         # argument: row - a pandas series for one GSV image
         # return:   img - a jpg image
-        n = 0
+        
         for segid in self.image_info.keys():
             for ptype in self.image_info[segid]['image_info'].keys():
                 for side in self.image_info[segid]['image_info'][ptype].keys():
@@ -157,7 +157,6 @@ class auto_audit_df:
                             full_url = base_url + location + heading + pitch + key
 
                             # File name
-                            # file_name = "micro_" + row.type + "_panoid" + row.pano_id + "_SegID" + str(row.SegID) + "_seq" + str(row.sequence_id) + "_LR-" + row.LR + "_azi" + str(row.azimuth) +".jpg"
                             file_name = "micro" + "_SegID-" + str(segid) + "_type-"+ ptype + "_side-" + side + "_seqid-" + str(seqid) + "_panoid-" + pano_id + "_azi-" + str(round(azimuth,2)) + ".jpg"
                             full_path = os.path.join(download_path, file_name)
 
@@ -171,7 +170,6 @@ class auto_audit_df:
                             full_url = base_url + location + heading + pitch + key
 
                             # File name
-                            # file_name = "micro_" + row.type + "_panoid" + row.pano_id + "_SegID" + str(row.SegID) + "_seq" + str(row.sequence_id) + "_LR-" + row.LR + "_azi" + str(row.azimuth) +".jpg"
                             file_name = "micro" + "_SegID-" + str(segid) + "_type-"+ ptype + "_side-" + side + "_seqid-" + str(seqid) + "_panoid-" + pano_id + "_azi-" + str(round(azimuth,2)) + ".jpg"
                             full_path = os.path.join(download_path, file_name)
 
