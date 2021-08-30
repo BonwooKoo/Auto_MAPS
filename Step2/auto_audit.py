@@ -129,7 +129,7 @@ class auto_audit_df:
                             n += 1
 
     # METHOD: download GSV images
-    def download_gsv(self, download_path, key):
+    def download_gsv(self, download_path, api_key):
         # Downloads gsv images
         # argument: row - a pandas series for one GSV image
         # return:   img - a jpg image
@@ -148,7 +148,7 @@ class auto_audit_df:
                         # Parameters
                         base_url = "https://maps.googleapis.com/maps/api/streetview?size=640x640&"
                         location = "location={},{}&".format(y_coord, x_coord)
-                        key = "key=" + key
+                        key = "key=" + api_key
 
                         # Different heading for dense vs. intersection
                         if side in ["L", "R"]:
