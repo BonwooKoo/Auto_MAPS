@@ -33,7 +33,9 @@ The output will be the presence or the count of the items for each street segmen
 The project uses R and Python in the workflow:
 
 ## Step 1: Generating Sampling Point on Street Network (R)
-Step 1 uses **prepareDownload.R** in Step1 folder and is based on R language. Using a street network shapefile or a state-county name as input, a CSV file containing the coordinate, heading, and unique identifying ID for Google Street View images will be generated. *In a future update, Step 1 will have an option to use Python instead of R.*
+Step 1 uses **prepareDownload.R** in Step1 folder and is based on R language. Using a street network shapefile or a state-county name as input, a CSV file containing the coordinate, heading, and unique identifying ID for Google Street View images will be generated. 
+
+*In a future update, Step 1 will have an option to use Python instead of R.*
 
 Once you've cloned this repo, import the functions in the script into your R session and execute prepare_download_points() function. As arguments to the function, you can either (1) provide your own shapefile or (2) state-county name pair. If using your own street network shapefile, Topologically Integrated Geographic Encoding and Referencing (TIGER) is recommended. If you provide state-county name pair as input, the R script will automatically download the TIGER shapefile. Additionally, you will need to provide your own Google Maps API key as an argument. In Step 1, the API key is used for collecting metadata of GSV images, which is free of charge as of 8/29/2021. 
 
