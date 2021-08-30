@@ -48,9 +48,9 @@ point_gsv$audit_point %>%
 ```
 
 **Dependency**
-* tidyverse - version 1.3.0
-* sf - version version 0.9-5
-* tigris - version 1.0
+* tidyverse 1.3.0
+* sf 0.9-5
+* tigris 1.0
 
 <br />
 
