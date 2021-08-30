@@ -129,7 +129,7 @@ class auto_audit_df:
                             n += 1
 
     # METHOD: download GSV images
-    def download_gsv(self, download_path, key = os.environ["google_api"]):
+    def download_gsv(self, download_path, key):
         # Downloads gsv images
         # argument: row - a pandas series for one GSV image
         # return:   img - a jpg image
