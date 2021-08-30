@@ -6,7 +6,7 @@ Auto-MAPS provides a scalable and reliable method for AUTOMATICALLY conducting a
 
 <br>
 Microscale characteristics of streetscapes
-The original MAPS-mini has 15 items, and Auto-MAPS on this repo measures 10 of them as the remaining five is measured using the conventional geographic information systems and Pyramid Scene Parsing Network ([PSPNET](https://github.com/Vladkryvoruchko/PSPNet-Keras-tensorflow)). 
+The original MAPS-mini has 15 items, and Auto-MAPS on this repo measures 10 of them as the remaining five is measured using the conventional geographic information systems and Pyramid Scene Parsing Network ( [PSPNET](https://github.com/Vladkryvoruchko/PSPNet-Keras-tensorflow) ). 
 
 | Section | Question                             | Method    |
 | :------ | :----------------------------------- | :-------: |
