@@ -38,6 +38,7 @@ Once you've cloned this repo, import the functions in the script into your R ses
 
 See below for an example code:
 ```
+# R 4.0.2.
 source("path-to-prepareDownload.R-file")
 point_gsv <- prepare_download_points(input_shape = your_TIGER_shapefile, key = "your-google-api-key") # or state = "GA", county = "Fulton"
 point_gsv$audit_point %>% 
@@ -51,6 +52,7 @@ point_gsv$audit_point %>%
 * tigris - version 1.0
 
 <br>
+
 ## Step 2: Downloading Street View Images (Python)
 
 > ***NOTE: If you do not have required packages (e.g., Tensorflow) installed, using Google Colab or other similar services is recommended. See [this](https://colab.research.google.com/drive/1_yiTDSLqwJfdvHRXvVWHrsv-_LLRlXFh?usp=sharing) Google Colab notebook for an example.***
@@ -61,6 +63,7 @@ After creating an instance of auto_audit_df class, use .add_image_info method() 
 
 See below for an example code:
 ```
+# Python 3.6.10.
 AUDIT_POINT_PATH = "path-to-your-CSVfile-from-Step1"
 DOWNLOAD_PATH = "path-to-folder-to-which-you-will-download-images"
 
@@ -71,12 +74,28 @@ test_df.download_gsv(download_path = DOWNLOAD_PATH, key = "your-google-api-key")
 ```
 
 <br>
+
 ## Step 3: Applying Computer Vision and Calculate Statistics (Python)
 Once you have downloaded the images, use .predict() method to apply the computer vision technique to the downloaded images. Next, use .prediction_summary() method to summarise the prediction results for each street segment. 
 
 See below for an example code:
 ```
+# Python 3.6.10.
 test_df.predict(DOWNLOAD_PATH, model_dense, model_intersection, model_top) # I need to change this part so that model_dense etc. are part of the class object.
 output = test_df.prediction_summary()
 output.to_csv(DOWNLOAD_PATH + "/output.csv")
+
+# Additionally
+test_df.show_prediction(DOWNLOAD_PATH, SegID = your-SegID)
 ```
+
+**Dependency**
+* Packages needed in [Mask R-CNN](https://github.com/matterport/Mask_RCNN)
+* pandas
+* urllib
+* Numpy
+* Pillow
+* matplotlib
+* h5py
+* scipy
+* scikit-image
