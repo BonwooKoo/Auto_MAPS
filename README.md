@@ -27,7 +27,7 @@ The original MAPS-mini has 15 items, and Auto-MAPS on this repo measures 10 of t
 
 The output will be the presence or the count of the items for each street segment.
 
-\
+<br />
 
 # Workflow
 The project uses R and Python in the workflow:
@@ -52,7 +52,7 @@ point_gsv$audit_point %>%
 * sf - version version 0.9-5
 * tigris - version 1.0
 
-\
+<br />
 
 ## Step 2: Downloading Street View Images (Python)
 
@@ -74,7 +74,7 @@ auto_audit.add_image_info(audit_point)
 test_df.download_gsv(download_path = DOWNLOAD_PATH, key = "your-google-api-key")
 ```
 
-\
+<br />
 
 ## Step 3: Applying Computer Vision and Calculate Statistics (Python)
 Once you have downloaded the images, use .predict() method to apply the computer vision technique to the downloaded images. Next, use .prediction_summary() method to summarise the prediction results for each street segment. 
