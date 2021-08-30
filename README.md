@@ -4,7 +4,6 @@ Auto-MAPS provides a scalable and reliable method for AUTOMATICALLY conducting a
 
 > Koo, B. W., Guhathakurta, S., & Botchwey, N. (2021). How are Neighborhood and Street-Level Walkability Factors Associated with Walking Behaviors? A Big Data Approach Using Street View Images. *Environment and Behavior*, https://doi.org/10.1177/00139165211014609
 
-<br>
 Microscale characteristics of streetscapes
 The original MAPS-mini has 15 items, and Auto-MAPS on this repo measures 10 of them as the remaining five is measured using the conventional geographic information systems and Pyramid Scene Parsing Network [PSPNet](https://github.com/Vladkryvoruchko/PSPNet-Keras-tensorflow). 
 
@@ -27,6 +26,8 @@ The original MAPS-mini has 15 items, and Auto-MAPS on this repo measures 10 of t
 |         | What percentage of the length of the sidewalk/walkway is covered by trees, awnings, or other overhead coverage? | PSPNet |
 
 The output will be the presence or the count of the items for each street segment.
+
+\
 
 # Workflow
 The project uses R and Python in the workflow:
@@ -51,7 +52,7 @@ point_gsv$audit_point %>%
 * sf - version version 0.9-5
 * tigris - version 1.0
 
-<br>
+\
 
 ## Step 2: Downloading Street View Images (Python)
 
@@ -73,7 +74,7 @@ auto_audit.add_image_info(audit_point)
 test_df.download_gsv(download_path = DOWNLOAD_PATH, key = "your-google-api-key")
 ```
 
-<br>
+\
 
 ## Step 3: Applying Computer Vision and Calculate Statistics (Python)
 Once you have downloaded the images, use .predict() method to apply the computer vision technique to the downloaded images. Next, use .prediction_summary() method to summarise the prediction results for each street segment. 
@@ -88,7 +89,6 @@ output.to_csv(DOWNLOAD_PATH + "/output.csv")
 # Additionally
 test_df.show_prediction(DOWNLOAD_PATH, SegID = your-SegID)
 ```
-
 **Dependency**
 * Packages needed in [Mask R-CNN](https://github.com/matterport/Mask_RCNN)
 * pandas
