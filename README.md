@@ -56,13 +56,11 @@ point_gsv$audit_point %>%
 
 <br />
 
-## Step 2: Downloading Street View Images (Python)
+## Step 2: Downloading Street View Images & Applying Computer Vision (Python)
 
-> ***NOTE: If you do not have required packages (e.g., Tensorflow) installed, using Google Colab or other similar services is recommended. See [this](https://colab.research.google.com/drive/1_yiTDSLqwJfdvHRXvVWHrsv-_LLRlXFh?usp=sharing) Google Colab notebook for an example.***
+After Step 1, you will have saved a CSV file. This CSV file is used as an input to Step 2 and 3. Once you've cloned this repo, 
 
-Step 2 and 3 uses **auto_audit.py** in Step2_3 folder and is based on Python language. After Step 1, you will have saved a CSV file. This CSV file is used as an input to Step 2 and 3. If you are using Google Colab or other similar services, upload the CSV file to your storage. 
-
-After creating an instance of auto_audit_df class, use .add_image_info method() to add image information and .download_gsv() method to download GSV images. You will need to provide your API key again, and getting the images are NOT FREE OF CHARGE.
+The remainder of the process assumes that you are using Google Colab. [demo.ipynb](https://colab.research.google.com/drive/1_yiTDSLqwJfdvHRXvVWHrsv-_LLRlXFh?usp=sharing) includes code to download GSV images, apply computer vision technique, and conducting automated audit using the output from the computer vision technique.
 
 See below for an example code:
 ```
@@ -79,6 +77,9 @@ test_df.download_gsv(download_path = DOWNLOAD_PATH, key = "your-google-api-key")
 <br />
 
 ## Step 3: Applying Computer Vision and Calculate Statistics (Python)
+
+> ***NOTE: Step 2 and 3 assumes that you are using Google Colab.***
+
 Once you have downloaded the images, use .predict() method to apply the computer vision technique to the downloaded images. Next, use .prediction_summary() method to summarise the prediction results for each street segment. 
 
 See below for an example code:
