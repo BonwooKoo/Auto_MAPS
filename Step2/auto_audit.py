@@ -315,7 +315,6 @@ class auto_audit_df:
             """
             # If Intersection
             if "intersection" in prediction.keys():
-                print("Dealing with intersection points")
 
                 for fname_yhat in prediction['intersection']:
                     full_path = os.path.join(image_path, fname_yhat[0])
@@ -332,7 +331,6 @@ class auto_audit_df:
             elif "dense" in prediction.keys():
                 file_name = prediction['dense'][0]
                 full_path = os.path.join(image_path, file_name)
-                print("Dealing with dense points")
                 image = skimage.io.imread(full_path)
                 # Get prediction result
                 yhat = prediction['dense'][1][0]
@@ -349,7 +347,6 @@ class auto_audit_df:
             elif "top" in prediction.keys():
                 file_name = prediction['top'][0]
                 full_path = os.path.join(image_path, file_name)
-                print("Dealing with top points")
                 image = skimage.io.imread(full_path)
                 # Get prediction result
                 yhat = prediction['top'][1][0]
