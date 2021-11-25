@@ -60,7 +60,7 @@ point_gsv$audit_point %>%
 
 > ***NOTE: Step 2 and 3 assumes that you are using Google Colab for demonstration purposes.***
 
-After Step 1, you will have saved a CSV file. You will need to upload the CSV file to Google Drive so that Google Colab can access the file. After the CSV is uploaded, you can finish the remainder of the process by following steps in [Auto_MAPS_demo.ipynb](https://colab.research.google.com/drive/1_yiTDSLqwJfdvHRXvVWHrsv-_LLRlXFh?usp=sharing).
+After Step 1, you will have saved a CSV file. You will need to upload the CSV file to Google Drive so that Google Colab can access the file. After the CSV is uploaded, you can finish the remainder of the process by following steps in [Auto_MAPS_demo.ipynb](https://github.com/BonwooKoo/automated_audit/blob/main/sample/demo.ipynb).
 
 **Dependency**
 * Packages needed in [Mask R-CNN](https://github.com/matterport/Mask_RCNN)
