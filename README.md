@@ -2,7 +2,7 @@
 
 Auto-MAPS provides a scalable and reliable method for AUTOMATICALLY conducting a validated walkability audit called [MAPS-mini](https://drjimsallis.org/measure_maps.html#MAPSMINI) (i.e., a short version of Microscale Audit of Pedestrian Streetscapes). Auto-MAPS is based on the combination of computer vision technique called [Mask R-CNN](https://github.com/matterport/Mask_RCNN) and Google Street View images. For the full description of the method, please refer to the following publication.
 
-> Koo, B. W., Guhathakurta, S., & Botchwey, N. (2021). How are Neighborhood and Street-Level Walkability Factors Associated with Walking Behaviors? A Big Data Approach Using Street View Images. *Environment and Behavior*, https://doi.org/10.1177/00139165211014609
+> Koo, B. W. (2021). Measuring Street-Level Walkability through Big Image Data and Its Associations with Walking Behavior (Doctoral dissertation, Georgia Institute of Technology). https://smartech.gatech.edu/handle/1853/65065
 
 Microscale characteristics of streetscapes
 The original MAPS-mini has 15 items, and Auto-MAPS on this repo measures 10 of them as the remaining five is measured using the conventional geographic information systems and Pyramid Scene Parsing Network ([PSPNet](https://github.com/Vladkryvoruchko/PSPNet-Keras-tensorflow)). 
