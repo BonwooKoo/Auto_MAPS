@@ -300,22 +300,22 @@ calculate_degree_endp = function(segments, clean_line = TRUE){
     az = rbind(a,z)
     az$SegID = as.numeric(sf::st_set_geometry(segments, NULL)[i,"SegID"])
     
-    # Flipping the direction
-    if (overall_degree > 0 & overall_degree <= 90){
-      flip = which.max(az$X)
-      az$azimuth[flip] = az$azimuth[flip] + 180
+#     # Flipping the direction (not needed for 2022 publication)
+#     if (overall_degree > 0 & overall_degree <= 90){
+#       flip = which.max(az$X)
+#       az$azimuth[flip] = az$azimuth[flip] + 180
       
-    } else if (overall_degree > 90 & overall_degree <= 180){
-      flip = which.min(az$Y)
-      az$azimuth[flip] = az$azimuth[flip] + 180
+#     } else if (overall_degree > 90 & overall_degree <= 180){
+#       flip = which.min(az$Y)
+#       az$azimuth[flip] = az$azimuth[flip] + 180
       
-    } else if (overall_degree > 180 & overall_degree <= 270){
-      flip = which.min(az$X)
-      az$azimuth[flip] = az$azimuth[flip] - 180
-    } else if (overall_degree > 270 & overall_degree <= 360){
-      flip = which.max(az$Y)
-      az$azimuth[flip] = az$azimuth[flip] - 180
-    }
+#     } else if (overall_degree > 180 & overall_degree <= 270){
+#       flip = which.min(az$X)
+#       az$azimuth[flip] = az$azimuth[flip] - 180
+#     } else if (overall_degree > 270 & overall_degree <= 360){
+#       flip = which.max(az$Y)
+#       az$azimuth[flip] = az$azimuth[flip] - 180
+#     }
     
     # Appending it to endp_all
     endp_all[c(i*2-1,i*2),] = az
